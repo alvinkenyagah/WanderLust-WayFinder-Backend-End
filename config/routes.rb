@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   post "/login", to: "sessions#create"
   get "/user", to: "users#show"
-   patch "/users", to: "users#update"
+  # patch "/users", to: "users#update"
   
   get '/users/:user_id/itineraries', to: 'itineraries#user_itineraries'
   get "/users_count", to: "users#count"

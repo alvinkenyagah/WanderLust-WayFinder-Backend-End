@@ -38,28 +38,28 @@ class UsersController < ApplicationController
 
 
 
-    # # PATCH /users/:id
-    # def update
-    #   user = User.find_by(id: session[:user_id])
-    #     user.update(user_params)
-    #     render json: user
-       
-    # end
-
+    # PATCH /users/:id
     def update
       user = find_user
-      # Remove the "id" and "user" parameters from user_params
-      user_params_without_id = user_params.except(:id, :user)
-      if params[:avatar]
-        # Update the user's avatar with the provided secure_url
-        user.avatar = params[:avatar]
-      end
-      if user.update(user_params_without_id)
+        user.update(user_params)
         render json: user
-      else
-        render json: { error: "Failed to update user information" }, status: :unprocessable_entity
-      end
+       
     end
+
+    # def update
+    #   user = find_user
+    #   # Remove the "id" and "user" parameters from user_params
+    #   user_params_without_id = user_params.except(:id, :user)
+    #   if params[:avatar]
+    #     # Update the user's avatar with the provided secure_url
+    #     user.avatar = params[:avatar]
+    #   end
+    #   if user.update(user_params_without_id)
+    #     render json: user
+    #   else
+    #     render json: { error: "Failed to update user information" }, status: :unprocessable_entity
+    #   end
+    # end
 
 
 
