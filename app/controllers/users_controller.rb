@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-    
+# skip_before_action :authorize, only: [:update] 
+rescue_from ActiveRecord::RecordInvalid, with: :invalid_user  
 
+def index
+  render json: User.all
+end
     # CREATE NEW USER 
 
     def create
@@ -34,28 +38,19 @@ class UsersController < ApplicationController
 
 
     # PATCH /users/:id
-    def update
+    def update 
       user = find_user
-        user.update(user_params)
-        render json: user
+        user.update!(user_params)
+        render json: user 
        
     end
 
-    # def update
-    #   user = find_user
-    #   # Remove the "id" and "user" parameters from user_params
-    #   user_params_without_id = user_params.except(:id, :user)
-    #   if params[:avatar]
-    #     # Update the user's avatar with the provided secure_url
-    #     user.avatar = params[:avatar]
-    #   end
-    #   if user.update(user_params_without_id)
-    #     render json: user
-    #   else
-    #     render json: { error: "Failed to update user information" }, status: :unprocessable_entity
-    #   end
-    # end
 
+      def destroy
+        user = User.find(params[:id])
+        user.destroy
+        
+      end
 
 
         private
@@ -65,9 +60,14 @@ class UsersController < ApplicationController
         end
 
         def user_params
-          params.permit(:first_name, :last_name, :username, :email, :password, :avatar)
+          params.require(:user).permit(:first_name, :last_name, :username, :email, :avatar)
         end
         
+        def invalid_user(invalid)
+          render json: {errors: invalid.record.errors}, status: :unprocessable_entity
+        end
+
+
  end
 
 
