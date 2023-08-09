@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
     # PATCH /users/:id
     def update
-      user = find_user
+      user = User.find_by(id: session[:user_id])
         user.update(user_params)
         render json: user
        

@@ -10,7 +10,7 @@
 # admin1 = User.create({first_name:"Japheth",last_name:"Yegon",username:"jay254",email:"jyegon504@gmail.com",password:"12345", avatar:"https://zeldor.biz/wp-content/uploads/2012/10/ruby_logo.png",admin: true})
 
 
-admin1 = User.create({first_name:"Gorety",last_name:"Wagutu",username:"wagutu",email:"wagutugorety@gmail.com",password:"00000", avatar:"https://zeldor.biz/wp-content/uploads/2012/10/ruby_logo.png",admin: true})
+# admin1 = User.create({first_name:"Gorety",last_name:"Wagutu",username:"wagutu",email:"wagutugorety@gmail.com",password:"00000", avatar:"https://zeldor.biz/wp-content/uploads/2012/10/ruby_logo.png",admin: true})
 
 # admin1 = User.create({first_name:"max",last_name:"pain",username:"maxpain",email:"maxpain@gmail.com",password:"maxpain", avatar:"https://zeldor.biz/wp-content/uploads/2012/10/ruby_logo.png",admin: true})
 # admin2 = Admin.create({first_name:,last_name:,username:,email:,password:})
