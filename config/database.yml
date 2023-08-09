@@ -84,4 +84,7 @@ production:
   database: wayfinderpostgresql_production
   username: wayfinderpostgresql
   password: <%= ENV["WAYFINDERPOSTGRESQL_DATABASE_PASSWORD"] %>
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+
+  
