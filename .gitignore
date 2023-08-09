@@ -28,7 +28,9 @@
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
 Gemfile
 .ruby-version
 Gemfile.lock
+
+config/master.key
+config/credentials.yml.enc
