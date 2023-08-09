@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :attractions
   resources :itineraries
   resources :destinations
-  # resources :users
+  resources :users
 
   resources :users, only: [] do
     get 'destinations', to: 'destinations#user_destinations'
