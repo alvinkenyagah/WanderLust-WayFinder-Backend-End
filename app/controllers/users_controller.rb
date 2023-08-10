@@ -60,7 +60,7 @@ end
         end
 
         def user_params
-          params.require(:user).permit(:first_name, :last_name, :username, :email, :avatar)
+          params.permit(:first_name, :last_name, :username, :email, :avatar, :password)
         end
         
         def invalid_user(invalid)
