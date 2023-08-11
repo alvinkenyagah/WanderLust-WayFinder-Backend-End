@@ -29,7 +29,13 @@ class ItinerariesController < ApplicationController
     render json: user_itineraries, include: :destination
   end
 
+# USER ITINERARY COUNT
 
+  def user_itineraries
+    user = User.find(params[:user_id])
+    itineraries = user.itineraries
+    render json: { itineraries: itineraries }
+  end
 
 
 # Delete itinerary

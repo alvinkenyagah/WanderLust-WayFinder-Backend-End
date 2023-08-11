@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/user", to: "users#show"
   
   get '/users/:user_id/itineraries', to: 'itineraries#user_itineraries'
+
+  get '/users/:user_id/itineraries', to: 'itineraries#user_itineraries'
   get "/users_count", to: "users#count"
   get "/destinations_count", to: "attractions#count"
   delete "/logout", to: "sessions#destroy"
