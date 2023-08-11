@@ -30,8 +30,17 @@ class ItinerariesController < ApplicationController
   end
 
 
-    def edit
+
+
+# Delete itinerary
+    def destroy
+      itinerary = Itinerary.find(params[:id])
+      itinerary
+      itinerary.destroy
+      head :no_content
+      
     end
+
   
     def update
       if @itinerary.update(itinerary_params)
@@ -41,10 +50,6 @@ class ItinerariesController < ApplicationController
       end
     end
   
-    def destroy
-      @itinerary.destroy
-      redirect_to itineraries_url, notice: 'Itinerary was successfully destroyed.'
-    end
   
     private
   
