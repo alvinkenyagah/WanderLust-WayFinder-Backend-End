@@ -43,7 +43,7 @@ def show
   itineraries_count = user.itineraries.count
   
   render json: {
-    user: user,
+ 
     destinations_count: destinations_count,
     itineraries_count: itineraries_count
   }
