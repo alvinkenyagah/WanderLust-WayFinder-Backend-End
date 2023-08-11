@@ -2,9 +2,6 @@ class UsersController < ApplicationController
 # skip_before_action :authorize, only: [:update] 
 rescue_from ActiveRecord::RecordInvalid, with: :invalid_user  
 
-def index
-  render json: User.all
-end
     # CREATE NEW USER 
 
     def create
