@@ -36,6 +36,23 @@ end
       end
 
 
+      # USER COUNT METHODS
+
+   
+
+def show
+  user = User.find(params[:id])
+  destinations_count = user.destinations.count
+  itineraries_count = user.itineraries.count
+  
+  render json: {
+    user: user,
+    destinations_count: destinations_count,
+    itineraries_count: itineraries_count
+  }
+end
+
+
 
     # PATCH /users/:id
     def update 
