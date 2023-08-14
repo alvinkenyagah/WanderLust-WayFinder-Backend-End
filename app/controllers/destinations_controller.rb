@@ -7,12 +7,10 @@ class DestinationsController < ApplicationController
     end
   
   
-         # GET /attractions/:id
+         # GET /destinationss/:id
          def show
-          @destination = find_destination
-            render json: @destination
-         
-              
+          destination = Destination.find(params[:id])
+          render json: destination
         end
   
     def new

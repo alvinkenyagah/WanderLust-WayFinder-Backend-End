@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'itineraries', to: 'itineraries#user_itineraries'
   end
 
+  get '/destinations/:destination_id', to: 'destinations#show'
   post '/signup', to: 'users#create'
   post "/login", to: "sessions#create"
   get "/user", to: "users#show"
